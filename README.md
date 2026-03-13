@@ -1,36 +1,72 @@
 # Coding Agent Demo
 
-Two hands-on demos showing how coding agents automate real work.
+Two hands-on demos using coding agents (Claude Code, Cursor, Copilot, etc.).
+
+## Setup
+
+1. Clone this repo: `git clone https://github.com/zikunye2/Coding-Agent-Demo.git`
+2. Open your coding agent in the cloned folder
+
+---
 
 ## Demo 1: Data Analysis
 
-Build a customer churn prediction pipeline — from raw data to a professional business report — in one prompt.
+Build a customer churn prediction pipeline from raw data to a business report.
 
-- **Folder**: `data-analysis/`
-- **What you get**: Python script + 8 figures + business report (report.md)
-- **Model**: XGBoost with GridSearchCV hyperparameter tuning
-- **Time**: ~2 minutes
+**Working folder**: `data-analysis/`
+
+### Step 1 — Explore the data
+
+```
+Install the dependencies in requirements.txt, then load telco_churn.csv and
+do exploratory data analysis. Show me the shape of the data, missing values,
+churn distribution, and a few visualizations. Save all figures to a figures/ folder.
+```
+
+### Step 2 — Train a model
+
+```
+Preprocess the data (handle any data type issues, encode categoricals,
+train/test split, standardize features). Train an XGBoost classifier with
+GridSearchCV hyperparameter tuning (small grid for speed, 3-fold CV).
+Show me accuracy, AUC-ROC, precision, recall, F1. Save confusion matrix,
+ROC curve, and feature importance plot to figures/.
+```
+
+### Step 3 — Write a business report
+
+```
+Write a report.md summarizing the full analysis. Include:
+- Executive summary with key metrics
+- Embedded figures using relative paths to figures/
+- Top 10 feature importance with business interpretation
+- 3 actionable retention strategy recommendations
+Make it professional and presentation-ready.
+```
+
+---
 
 ## Demo 2: Personal Website
 
-Turn your resume into a professional portfolio website — in one prompt.
+Turn a resume into a live portfolio website.
 
-- **Folder**: `personal-website/`
-- **What you get**: Live portfolio website at localhost
-- **Template**: Astro + Tailwind CSS (DevPortfolio)
-- **Time**: ~1 minute
+**Working folder**: `personal-website/`
 
-## How to Run
+### Before you start
 
-1. Open any coding agent (Claude Code, Cursor, Copilot, Gemini CLI, etc.)
-2. Navigate to the demo folder (`data-analysis/` or `personal-website/`)
-3. Paste the prompt from that folder's `README.md`
-4. Watch the agent work
+Open `inputs/sample_resume.md` and replace it with your own info (or keep the sample).
 
-## Reference Output
+### Step 1 — Build the site
 
-Each demo has a `completed/` folder with the expected output for reference.
+```
+Read my resume from inputs/sample_resume.md and the project summary from
+inputs/project1_summary.md. Update website/devportfolio-master/src/config.ts
+with my information: name, title, about me, skills, experience, education,
+and projects. Keep it accurate — don't add anything not in the source files.
+```
 
-## Personalize Demo 2
+### Step 2 — Preview
 
-Replace `personal-website/inputs/sample_resume.md` with your own resume in markdown format, then run the prompt — the agent builds your personal portfolio.
+```
+Install dependencies and start the dev server so I can see the site.
+```
